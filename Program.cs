@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ Author: Vitor Assuncao Crosera
+ Date: 1/28/2020
+ Comments: This C# Console application code demonstrates the use of 
+           conditional statements after getting input from users
+*/
+using System;
 
 namespace PROGRAM1
 {
