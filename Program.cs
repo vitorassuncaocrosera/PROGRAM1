@@ -6,81 +6,98 @@ namespace PROGRAM1
     {
         static void Main(string[] args)
         {
+            // Ask the user for input
+            Console.WriteLine("What grade do you expect to get in ISM 4300 from 1 to 100?");
+            /*
+               Use the try catch block to validate user input.
+               If the user provides bad input, the catch block
+               will handle the error and a message will be displayed.
+            */
+            try
             {
-                // Ask the user for input
-                Console.Write("Enter an Integer value between 1 and 20 to execute an iterative statement: ");
-                /*
-                   Use the try catch block to validate user input.
-                   If the user provides bad input, the catch block
-                   will handle the error and a message will be displayed.
-                */
-                try
+                // This variable will gather the user input
+                string input = Console.ReadLine();
+                /* 
+                   This variable will be used to store sales
+                   after the input variable is parsed to decimal
+                 */
+                // This variable will be used to calculate the bonus
+                decimal grade = decimal.Parse(input);
+                /* 
+                    This IF/ELSE IF/ELSE statement is used to conditionally
+                    test the users input. Various options are available
+                    depending on the amount entered by the user. Then, insde of each IF/ELSE IF/ELSE
+                    there is a switch conditional statement that displays a message depending
+                    on the number of years experience in sales entered by the user. 
+                 */
+                if (grade >= 98)
                 {
-                    // This variable will gather data from user input
-                    string input = Console.ReadLine();
-                    // This variable will be used to perform the various iterative statements and is parsed as an integer
-                    int value_of_input = int.Parse(input);
-                    /* 
-                       This conditional IF/ELSE IF/ELSE statement is used to test the values of user input.
-                       Depending on the value of the user input between 1 and 20, a different type of 
-                       iterative statement will execute. 
-                    */
-                    // If the value of user input is between 1 and 5, execute a For Loop
-                    if ((value_of_input > 0) && (value_of_input <= 5))
-                    {
-                        Console.WriteLine("Executing a For Loop!");
-                        Console.WriteLine("The For Loop will iterate " + value_of_input.ToString() + " times.");
-                        // Here is the For Loop
-                        for (int i = 0; i < value_of_input; i++)
-                        {
-                            Console.WriteLine("The value of the variable i in this iteration is: " + i.ToString());
-                        }
-                        Console.WriteLine("Press any key to exit the program ...");
-                        // Pause the program and await the user to press a key to end the program
-                        Console.ReadKey(true);
-                    }
-                    // If the value of user input is between 6 and 10, execute a While Loop
-                    else if ((value_of_input > 5) && (value_of_input <= 10))
-                    {
-                        Console.WriteLine("Executing a While Loop!");
-                        Console.WriteLine("The While Loop will iterate " + value_of_input.ToString() + " times.");
-                        // Here is the While Loop
-                        while (value_of_input > 0)
-                        {
-                            Console.WriteLine("The value of the iterative variable is: " + value_of_input.ToString());
-                            value_of_input--;
-                        }
-                        Console.WriteLine("Press any key to exit the program ...");
-                        Console.ReadKey(true);
-                    }
-                    // If the value of user input is between 11 and 20, execute a Do While Loop
-                    else if ((value_of_input > 10) && (value_of_input <= 20))
-                    {
-                        Console.WriteLine("Executing a Do While Loop!");
-                        Console.WriteLine("The Do While Loop will iterate " + value_of_input.ToString() + " times.");
-                        // Here is the Do While Loop
-                        do
-                        {
-                            Console.WriteLine("The value of the iterative variable is: " + value_of_input.ToString());
-                            value_of_input--;
-                        } while (value_of_input > 0);
-                        Console.WriteLine("Press any key to exit the program ...");
-                        Console.ReadKey(true);
-                    }
-                    // If the user does not enter a value between 1 and 20, display a message
-                    else
-                    {
-                        Console.WriteLine("Please enter an integer between 1 and 20 and try again ...");
-                        Console.WriteLine("Press any key to exit the program and try again ...");
-                        Console.ReadKey(true);
-                    }
-                } // End of try
-                catch
+
+                    Console.WriteLine("Your Letter grade will be A+");
+                    // Now get the number of years the user has been in sales
+
+
+                }
+                else if ((grade >= 92) && (grade <= 97))
                 {
-                    Console.WriteLine("Please enter an integer value and try running the program again ...");
-                    Console.WriteLine("Press any key to exit the program ...");
-                    Console.ReadKey(true);
-                } // End of catch
-            }
-    }
-}
+                    Console.WriteLine("Your Letter grade will be A");
+                }
+                else if ((grade >= 90) && (grade <= 91))
+                {
+                    Console.WriteLine("Your Letter grade will be A-");
+                }
+                else if ((grade >= 88) && (grade <= 89))
+                {
+                    Console.WriteLine("Your Letter grade will be B+");
+                }
+                else if ((grade >= 82) && (grade <= 87))
+                {
+                    Console.WriteLine("Your Letter grade will be B");
+                }
+                else if ((grade >= 80) && (grade <= 81))
+                {
+                    Console.WriteLine("Your Letter grade will be B-");
+                }
+                else if ((grade >= 78) && (grade <= 79))
+                {
+                    Console.WriteLine("Your Letter grade will be C+");
+                }
+                else if ((grade >= 72) && (grade <= 77))
+                {
+                    Console.WriteLine("Your Letter grade will be C");
+                }
+                else if ((grade >= 70) && (grade <= 71))
+                {
+                    Console.WriteLine("Your Letter grade will be C-");
+                }
+                else if ((grade >= 68) && (grade <= 69))
+                {
+                    Console.WriteLine("Your Letter grade will be D+");
+                }
+                else if ((grade >= 62) && (grade <= 69))
+                {
+                    Console.WriteLine("Your Letter grade will be D");
+                }
+                else if ((grade >= 60) && (grade <= 61))
+                {
+                    Console.WriteLine("Your Letter grade will be D-");
+                }
+                else if (grade < 60)
+                {
+                    Console.WriteLine("Your Letter grade will be F");
+                }
+            } // end of try
+            catch
+            {
+                Console.WriteLine("Please use a decimal data type for your sales amount next time...");
+                Console.WriteLine("--- OR ---");
+                Console.WriteLine("Please use an integer data type for your number of years in sales next time ...");
+                Console.WriteLine("Press any key to exit the program and try again...");
+                Console.ReadKey(true);
+            } // end of catch     
+        } // end of Main
+    } // end of class
+} // end of namespace
+        
+    
+
